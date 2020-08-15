@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /page/archives/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: README.md
+
+Sitemap: https://www.yixuju.cn/sitemap.xml
