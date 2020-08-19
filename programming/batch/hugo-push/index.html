@@ -9,17 +9,17 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='现在整个网站是部署在阿里云上的，但基础代码还是放在 github 上，这样通过 github 的 webhook 可以实现自动推送，但是本地生成的文件还是需要几步更新，推送到 github 的上的，所以写了一个脚本来进行，最后一步的生成和推送。' />
-<meta name="keywords" content='web,python,blog' />
+<meta name="keywords" content='web,python,blog,batch' />
 <meta name="generator" content="Hugo 0.53" />
 <meta property="og:url" content='https://www.yixuju.cn/programming/batch/hugo-push/' />
-<meta property="og:title" content='编写bat批处理脚本文件来设置自动推送' />
+<meta property="og:title" content='编写 bat 批处理脚本文件来设置自动推送' />
 <meta property="og:description" content='现在整个网站是部署在阿里云上的，但基础代码还是放在 github 上，这样通过 github 的 webhook 可以实现自动推送，但是本地生成的文件还是需要几步更新，推送到 github 的上的，所以写了一个脚本来进行，最后一步的生成和推送。' />
 <meta property="og:site_name" content='逸絮居' />
 <meta property="og:image" content='https://www.yixuju.cn/img/background.jpg' />
 <meta property="og:locale" content='zh-CN' />
 <meta property="fb:app_id" content='198934840692875' />
 <meta property="fb:admins" content='' />
-<meta itemprop="name" content='编写bat批处理脚本文件来设置自动推送' />
+<meta itemprop="name" content='编写 bat 批处理脚本文件来设置自动推送' />
 <meta itemprop="description" content='现在整个网站是部署在阿里云上的，但基础代码还是放在 github 上，这样通过 github 的 webhook 可以实现自动推送，但是本地生成的文件还是需要几步更新，推送到 github 的上的，所以写了一个脚本来进行，最后一步的生成和推送。' />
 <meta itemprop="image" content='https://www.yixuju.cn/img/background.jpg' />
 <meta name="twitter:card" content='summary' />
@@ -27,10 +27,10 @@
 <meta name="twitter:site" content='' />
 
 <meta name="twitter:creator" content='' />
-<meta name="twitter:title" content='编写bat批处理脚本文件来设置自动推送' />
+<meta name="twitter:title" content='编写 bat 批处理脚本文件来设置自动推送' />
 <meta name="twitter:description" content='现在整个网站是部署在阿里云上的，但基础代码还是放在 github 上，这样通过 github 的 webhook 可以实现自动推送，但是本地生成的文件还是需要几步更新，推送到 github 的上的，所以写了一个脚本来进行，最后一步的生成和推送。' />
 <meta name="twitter:image" content='https://www.yixuju.cn/img/background.jpg' />
-<title>编写bat批处理脚本文件来设置自动推送 | 逸絮居 </title>
+<title>编写 bat 批处理脚本文件来设置自动推送 | 逸絮居 </title>
 <link rel="canonical" href=https://www.yixuju.cn/programming/batch/hugo-push/ />
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
@@ -114,10 +114,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#一些说明">一些说明</a>
-<ul>
+<li><a href="#一些说明">一些说明</a></li>
 <li><a href="#提供英文版以消除编码方式影响">提供英文版以消除编码方式影响</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav></div></li>
@@ -167,14 +165,17 @@
                 
     <article id="post" class="card">
     <div id="post-title">
-        <h1>编写bat批处理脚本文件来设置自动推送</h1>
+        <h1>编写 bat 批处理脚本文件来设置自动推送</h1>
     </div>
     <div id="post-cotent">
         <p>现在整个网站是部署在阿里云上的，但基础代码还是放在 github 上，这样通过 github 的 webhook 可以实现自动推送，但是本地生成的文件还是需要几步更新，推送到 github 的上的，所以写了一个脚本来进行，最后一步的生成和推送。</p>
 
+<blockquote>
+<p><strong>注意</strong>：bat 批处理脚本在 <a href="https://www.yixuju.cn/programming/batch/hugo-push-1/">《通过复制 git 信息提交网站更新 commit》</a> 中完成了新的更新配置，以便将每次的更新记录在 github commit 信息中。</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+<pre class="chroma"><code class="language-batch" data-lang="batch"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -201,36 +202,34 @@
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">@echo off
-<span class="nb">set</span> <span class="nv">pan</span><span class="o">=</span>.<span class="se">\p</span>ublic<span class="se">\
-</span><span class="se"></span><span class="nb">set</span> <span class="nv">repo</span><span class="o">=</span>https://github.com/yi-Xu-0100/www.yixuju.cn.git
-<span class="nb">set</span> <span class="nv">branch</span><span class="o">=</span>master
-<span class="k">if</span> exist %pan% <span class="o">(</span>
-    
-    <span class="nb">echo</span> <span class="s2">&#34;清除 public 文件夹&#34;</span>
-    rd /S /Q %pan%
-    <span class="nb">echo</span> <span class="s2">&#34;重新执行Hugo命令生成站点&#34;</span>
+<pre class="chroma"><code class="language-batch" data-lang="batch"><span class="p">@</span><span class="k">echo</span> off
+<span class="k">set</span> <span class="nv">pan</span><span class="p">=</span>.\public\
+<span class="k">set</span> <span class="nv">repo</span><span class="p">=</span>https://github.com/yi-Xu-0100/www.yixuju.cn.git
+<span class="k">set</span> <span class="nv">branch</span><span class="p">=</span>master
+<span class="k">if</span> <span class="k">exist</span> <span class="nv">%pan%</span> <span class="p">(</span>
+    <span class="k">echo</span> <span class="s2">&#34;清除 public 文件夹&#34;</span>
+    <span class="k">rd</span> /S /Q <span class="nv">%pan%</span>
+    <span class="k">echo</span> <span class="s2">&#34;重新执行Hugo命令生成站点&#34;</span>
     hugo
-<span class="o">)</span> <span class="k">else</span> <span class="o">(</span>
-    <span class="nb">echo</span> <span class="s2">&#34;未发现 public 文件夹&#34;</span>
-    <span class="nb">echo</span> <span class="s2">&#34;重新执行 Hugo 命令生成站点&#34;</span>
+<span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+    <span class="k">echo</span> <span class="s2">&#34;未发现 public 文件夹&#34;</span>
+    <span class="k">echo</span> <span class="s2">&#34;重新执行 Hugo 命令生成站点&#34;</span>
     hugo
-<span class="o">)</span>
-<span class="k">if</span> exist %pan% <span class="o">(</span>
-    <span class="nb">cd</span> %pan%
-    <span class="nb">echo</span> <span class="s2">&#34;初始化 git&#34;</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="k">exist</span> <span class="nv">%pan%</span> <span class="p">(</span>
+    <span class="k">cd</span> <span class="nv">%pan%</span>
+    <span class="k">echo</span> <span class="s2">&#34;初始化 git&#34;</span>
     git init
     git add --all
-    git commit -m <span class="s2">&#34;update site at %time%&#34;</span>
-    <span class="nb">echo</span> <span class="s2">&#34;设置远程库并推送&#34;</span>
-    git remote add origin %repo%
+    git commit -m <span class="s2">&#34;update site at </span><span class="nv">%time%</span><span class="s2">&#34;</span>
+    <span class="k">echo</span> <span class="s2">&#34;设置远程库并推送&#34;</span>
+    git remote add origin <span class="nv">%repo%</span>
     git push -f origin master:master -v
-<span class="o">)</span> <span class="k">else</span> <span class="o">(</span>
-    <span class="nb">echo</span> <span class="s2">&#34;未找到 public 文件夹，疑似 hugo 命令未成功！&#34;</span>
-<span class="o">)</span>
+<span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+    <span class="k">echo</span> <span class="s2">&#34;未找到 public 文件夹，疑似 hugo 命令未成功！&#34;</span>
+<span class="p">)</span>
 pause</code></pre></td></tr></table>
 </div>
 </div>
@@ -239,19 +238,19 @@ pause</code></pre></td></tr></table>
 <p>这个脚本运行可能会碰到一些问题，本质上说，需要一定的条件：</p>
 
 <ul>
-<li><p>完成免密码与github链接</p></li>
+<li><p>完成免密码与 github 链接。</p></li>
 
-<li><p>脚本中的路径需要自己修改设置</p></li>
+<li><p>脚本中的路径需要自己修改设置。</p></li>
 
-<li><p>仅支持 windows 系统【 win10 系统测试通过】</p></li>
+<li><p>仅支持 windows 系统。【 win10 系统测试通过】</p></li>
 </ul>
 
-<h3 id="提供英文版以消除编码方式影响">提供英文版以消除编码方式影响</h3>
+<h2 id="提供英文版以消除编码方式影响">提供英文版以消除编码方式影响</h2>
 
 <p>考虑到站点源文件统一使用 UTF-8 编码方式，而 windows 默认编码方式为 gbk ，造成中文在 cmd 中和编辑器中总有一个显示不正确，所以将脚本中文字替换成英文，以避免编码方式的影响。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+<pre class="chroma"><code class="language-batch" data-lang="batch"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -278,43 +277,41 @@ pause</code></pre></td></tr></table>
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">@echo off
-<span class="nb">set</span> <span class="nv">pan</span><span class="o">=</span>.<span class="se">\p</span>ublic<span class="se">\
-</span><span class="se"></span><span class="nb">set</span> <span class="nv">repo</span><span class="o">=</span>git@github.com:yi-Xu-0100/www.yixuju.cn.git
-<span class="nb">set</span> <span class="nv">branch</span><span class="o">=</span>master
-<span class="k">if</span> exist %pan% <span class="o">(</span>
-    
-    <span class="nb">echo</span> <span class="s2">&#34;clean public directory&#34;</span>
-    rd /S /Q %pan%
-    <span class="nb">echo</span> <span class="s2">&#34;Hugo again for new site&#34;</span>
+<pre class="chroma"><code class="language-batch" data-lang="batch"><span class="p">@</span><span class="k">echo</span> off
+<span class="k">set</span> <span class="nv">pan</span><span class="p">=</span>.\public\
+<span class="k">set</span> <span class="nv">repo</span><span class="p">=</span>git@github.com:yi-Xu-0100/www.yixuju.cn.git
+<span class="k">set</span> <span class="nv">branch</span><span class="p">=</span>master
+<span class="k">if</span> <span class="k">exist</span> <span class="nv">%pan%</span> <span class="p">(</span>
+    <span class="k">echo</span> <span class="s2">&#34;clean public directory&#34;</span>
+    <span class="k">rd</span> /S /Q <span class="nv">%pan%</span>
+    <span class="k">echo</span> <span class="s2">&#34;Hugo again for new site&#34;</span>
     hugo
-<span class="o">)</span> <span class="k">else</span> <span class="o">(</span>
-    <span class="nb">echo</span> <span class="s2">&#34;can not find public directory&#34;</span>
-    <span class="nb">echo</span> <span class="s2">&#34;Hugo again for new site&#34;</span>
+<span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+    <span class="k">echo</span> <span class="s2">&#34;can not find public directory&#34;</span>
+    <span class="k">echo</span> <span class="s2">&#34;Hugo again for new site&#34;</span>
     hugo
-<span class="o">)</span>
-<span class="k">if</span> exist %pan% <span class="o">(</span>
-    <span class="nb">cd</span> %pan%
-    <span class="nb">echo</span> <span class="s2">&#34;git init and commit&#34;</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="k">exist</span> <span class="nv">%pan%</span> <span class="p">(</span>
+    <span class="k">cd</span> <span class="nv">%pan%</span>
+    <span class="k">echo</span> <span class="s2">&#34;git init and commit&#34;</span>
     git init
     git add --all
-    git commit -m <span class="s2">&#34;update site at %time%&#34;</span>
-    <span class="nb">echo</span> <span class="s2">&#34;set remote repository and push forcely&#34;</span>
-    git remote add origin %repo%
+    git commit -m <span class="s2">&#34;update site at </span><span class="nv">%time%</span><span class="s2">&#34;</span>
+    <span class="k">echo</span> <span class="s2">&#34;set remote repository and push forcely&#34;</span>
+    git remote add origin <span class="nv">%repo%</span>
     git push -f origin master:master -v
-<span class="o">)</span> <span class="k">else</span> <span class="o">(</span>
-    <span class="nb">echo</span> <span class="s2">&#34;can not find public directory, hugo fail!&#34;</span>
-<span class="o">)</span>
+<span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+    <span class="k">echo</span> <span class="s2">&#34;can not find public directory, hugo fail!&#34;</span>
+<span class="p">)</span>
 pause</code></pre></td></tr></table>
 </div>
 </div>
     </div>
     <div id="copyright" class="card">
 
-    <div><span> 文章标题：编写bat批处理脚本文件来设置自动推送</span>
+    <div><span> 文章标题：编写 bat 批处理脚本文件来设置自动推送</span>
     </div>
 
 
@@ -327,7 +324,7 @@ pause</code></pre></td></tr></table>
 
 
 
-    <div>创建时间：<time datetime=2019-01-22></time>2019-01-22
+    <div>创建时间：<time datetime=2019-01-22></time>2019-01-22 | 最新更新于：<time datetime=2020-08-18></time>2020-08-18
     </div>
 
     <div>原始链接：https://www.yixuju.cn/programming/batch/hugo-push/<span class="copy-path" title="点击复制文章链接" data-clipboard-demo="" data-clipboard-action="copy" data-clipboard-text='https://www.yixuju.cn/programming/batch/hugo-push/' aria-label="复制成功！"><i class="icon-copy"></i></span>
@@ -342,6 +339,10 @@ pause</code></pre></td></tr></table>
     
         <div class=" card pagination">
         
+            
+            <a class="button next-page" href= /programming/batch/hugo-push-1/ title=通过复制&#32;git&#32;信息提交网站更新&#32;commit>
+                下一页
+            </a>
             
         </div>
     
@@ -406,10 +407,8 @@ pause</code></pre></td></tr></table>
 <ul>
 <li>
 <ul>
-<li><a href="#一些说明">一些说明</a>
-<ul>
+<li><a href="#一些说明">一些说明</a></li>
 <li><a href="#提供英文版以消除编码方式影响">提供英文版以消除编码方式影响</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -433,7 +432,7 @@ pause</code></pre></td></tr></table>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     
         <i class="icon-legal"></i>
-        <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">鲁ICP备17049362号</a>
+        <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">鲁 ICP 备 17049362 号</a>
     
 </footer>
     </body>

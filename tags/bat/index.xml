@@ -6,13 +6,22 @@
     <description>Recent content in Bat on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
-    <lastBuildDate>Tue, 22 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2020 17:00:32 +0000</lastBuildDate>
     
 	<atom:link href="https://www.yixuju.cn/tags/bat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>编写bat批处理脚本文件来设置自动推送</title>
+      <title>通过复制 git 信息提交网站更新 commit</title>
+      <link>https://www.yixuju.cn/programming/batch/hugo-push-1/</link>
+      <pubDate>Tue, 18 Aug 2020 17:00:32 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/programming/batch/hugo-push-1/</guid>
+      <description>&lt;p&gt;在 &lt;a href=&#34;https://www.yixuju.cn/programming/batch/hugo-push/&#34;&gt;《编写 bat 批处理脚本文件来设置自动推送》&lt;/a&gt; 中，我们使用强制覆盖的方式忽略仓库的错误，造成没有相应的版本控制信息被保存下来，这次，通过新的复制 git 信息的方法，将每次的站点更新保存到 github 的 commit 信息中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>编写 bat 批处理脚本文件来设置自动推送</title>
       <link>https://www.yixuju.cn/programming/batch/hugo-push/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
