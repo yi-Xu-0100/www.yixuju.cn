@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python2 on 逸絮居</title>
+    <link>https://www.yixuju.cn/tags/python2/</link>
+    <description>Recent content in Python2 on 逸絮居</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>yi_Xu</copyright>
+    <lastBuildDate>Sun, 23 Jul 2017 14:22:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.yixuju.cn/tags/python2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python 中的 Print</title>
+      <link>https://www.yixuju.cn/programming/python/print-for-python/</link>
+      <pubDate>Sun, 23 Jul 2017 14:22:28 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/programming/python/print-for-python/</guid>
+      <description>&lt;p&gt;编程语言学习之旅总是从各种 &lt;code&gt;Print&lt;/code&gt; 和 &lt;code&gt;Input&lt;/code&gt; 语句中开始， &lt;code&gt;Python&lt;/code&gt; 也不例外，那你能看出什么问题呢？没有？那我提几个吧……&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
