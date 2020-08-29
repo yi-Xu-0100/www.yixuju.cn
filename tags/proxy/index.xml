@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on 逸絮居</title>
-    <link>https://www.yixuju.cn/tags/git/</link>
-    <description>Recent content in Git on 逸絮居</description>
+    <title>Proxy on 逸絮居</title>
+    <link>https://www.yixuju.cn/tags/proxy/</link>
+    <description>Recent content in Proxy on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
     <lastBuildDate>Fri, 28 Aug 2020 08:40:39 +0000</lastBuildDate>
     
-	<atom:link href="https://www.yixuju.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.yixuju.cn/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://www.yixuju.cn/other/talking-about-proxy/</guid>
       <description>&lt;p&gt;代理软件在计算机使用中开始变得频繁，现在主要用于学术研究，为了下载文献，不得不使用学校的 &lt;code&gt;VPN&lt;/code&gt; 服务连入校园网。而对于代理软件，代理规则的说法和配置说明，却不是明确的，为了更快的在终端中使用 &lt;code&gt;git clone&lt;/code&gt; 命令下载 &lt;code&gt;Github&lt;/code&gt; 的库，如何在终端中设置代理，也有许多教程，本篇文章主要说明一些代理软件方面的理解和对终端设置代理。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>【建站拾橞】第一期：git 初探与基础应用</title>
-      <link>https://www.yixuju.cn/other/the-gains-from-personal-blog-building-1/</link>
-      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/other/the-gains-from-personal-blog-building-1/</guid>
-      <description>&lt;p&gt;因为个人喜好，我学习了相关的基础知识，搭建了这个静态博客。在这摸索的过程中，我学到了许多东西，希望记录下一些应用心得。第一期的内容，主要是结合经历，对git的基础操作有个记录。&lt;/p&gt;</description>
     </item>
     
   </channel>

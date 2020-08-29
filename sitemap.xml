@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.yixuju.cn/other/talking-about-proxy/</loc>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.yixuju.cn/programming/batch/hugo-push-2/</loc>
     <lastmod>2020-08-21T09:24:47+00:00</lastmod>
   </url>
@@ -471,7 +476,7 @@
   
   <url>
     <loc>https://www.yixuju.cn/tags/cmd/</loc>
-    <lastmod>2020-08-21T09:24:47+00:00</lastmod>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -501,7 +506,7 @@
   
   <url>
     <loc>https://www.yixuju.cn/tags/git/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -554,8 +559,20 @@
   </url>
   
   <url>
+    <loc>https://www.yixuju.cn/tags/powershell/</loc>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yixuju.cn/tags/print/</loc>
     <lastmod>2017-07-23T14:22:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yixuju.cn/tags/proxy/</loc>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -614,6 +631,12 @@
   </url>
   
   <url>
+    <loc>https://www.yixuju.cn/tags/windows/</loc>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yixuju.cn/tags/yaml/</loc>
     <lastmod>2018-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -637,7 +660,7 @@
   
   <url>
     <loc>https://www.yixuju.cn/other/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
   </url>
   
   <url>
@@ -651,7 +674,7 @@
   
   <url>
     <loc>https://www.yixuju.cn/</loc>
-    <lastmod>2020-08-21T09:24:47+00:00</lastmod>
+    <lastmod>2020-08-28T08:40:39+00:00</lastmod>
     <priority>0</priority>
   </url>
   
