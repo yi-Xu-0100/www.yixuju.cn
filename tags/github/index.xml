@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on 逸絮居</title>
+    <title>github on 逸絮居</title>
     <link>https://www.yixuju.cn/tags/github/</link>
-    <description>Recent content in Github on 逸絮居</description>
+    <description>Recent content in github on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.yixuju.cn/tags/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yixuju.cn/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【建站拾橞】第一期：git 初探与基础应用</title>
       <link>https://www.yixuju.cn/other/the-gains-from-personal-blog-building-1/</link>

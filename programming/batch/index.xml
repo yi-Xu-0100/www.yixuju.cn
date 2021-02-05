@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>batch on 逸絮居</title>
@@ -6,11 +6,7 @@
     <description>Recent content in batch on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
-    <lastBuildDate>Fri, 21 Aug 2020 09:24:47 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.yixuju.cn/programming/batch/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 21 Aug 2020 09:24:47 +0000</lastBuildDate><atom:link href="https://www.yixuju.cn/programming/batch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>单文件推送远程库批处理脚本</title>
       <link>https://www.yixuju.cn/programming/batch/hugo-push-2/</link>

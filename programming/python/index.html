@@ -10,7 +10,7 @@
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='python 是适合初学者学习的，简单上手的一种编程语言。 我尽力将我的我发现的问题记录下来，希望我不会忘掉如何使' />
 <meta name="keywords" content='web,python,blog,batch' />
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.80.0" />
 <meta property="og:url" content='https://www.yixuju.cn/programming/python/' />
 <meta property="og:title" content='python' />
 <meta property="og:description" content='python 是适合初学者学习的，简单上手的一种编程语言。 我尽力将我的我发现的问题记录下来，希望我不会忘掉如何使' />
@@ -35,9 +35,10 @@
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
-<link rel="stylesheet" href=/css/style.css />
-<script src=/js/jquery-3.3.1.min.js></script>
-<script src=/js/custom.js></script>
+<link rel="stylesheet" href=/css/style.min.css />
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script src=/js/custom.min.js></script>
         
         
     </head>
@@ -58,15 +59,7 @@
     </div>
 </div>
 <div id="jquery-menu" class="mobile">
-    <div id="mobile-search">
-        <i class="icon-search icon-large"></i>
-        <form action="//www.google.com/search" target="_blank" class="search-form">
-            <input type="text" name="q" maxlength="20" placeholder="搜索...">
-            <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-        </form>
-    </div>
     <ul id="mobile-menu">
-        
         
             
                 <li>
@@ -109,6 +102,9 @@
             
         
     
+    <li id="mobile-toc-title">目录<i id="down-up" class="icon-double-angle-down"></i>
+    <div id="mobile-toc" class="mobile"><nav id="TableOfContents"></nav></div></li>
+
 </div>
         <header>
     <div id="header">
@@ -156,10 +152,8 @@
     <div id="section-title" class="card">
         <h1>python</h1>
         <p>python 是适合初学者学习的，简单上手的一种编程语言。</p>
-
 <blockquote>
 <p>我尽力将我的我发现的问题记录下来，希望我不会忘掉如何使用它。</p>
-
 <p>我希望我的文章能够帮助到你，也欢迎你有什么问题<a href="https://www.yixuju.cn/page/about/">与我联系</a>。</p>
 </blockquote>
 
@@ -176,23 +170,31 @@
     
     
         <div class="list list-post">
-            <a class="post-link" href="https://www.yixuju.cn/programming/python/change-meta-data/">2018-03-03 | python3 实现 hugo 站点中的 front matter 的修改</a>
+            <a class="post-link" href="/programming/python/change-meta-data/">
+              2018-03-03 | python3 实现 hugo 站点中的 front matter 的修改
+            </a>
             <span class="read-info">字数：459 预计时间：1 分钟</span>
         </div>
     
         <div class="list list-post">
-            <a class="post-link" href="https://www.yixuju.cn/programming/python/html-to-csv/">2018-01-08 | python 实现 HTML 的表格转 csv</a>
+            <a class="post-link" href="/programming/python/html-to-csv/">
+              2018-01-08 | python 实现 HTML 的表格转 csv
+            </a>
             <span class="read-info">字数：364 预计时间：1 分钟</span>
         </div>
     
         <div class="list list-post">
-            <a class="post-link" href="https://www.yixuju.cn/programming/python/python3-logconfig/">2017-08-17 | Python3 中的 log 文件配置方法</a>
+            <a class="post-link" href="/programming/python/python3-logconfig/">
+              2017-08-17 | Python3 中的 log 文件配置方法
+            </a>
             <span class="read-info">字数：2412 预计时间：5 分钟</span>
         </div>
     
         <div class="list list-post">
-            <a class="post-link" href="https://www.yixuju.cn/programming/python/print-for-python/">2017-07-23 | Python 中的 Print</a>
-            <span class="read-info">字数：795 预计时间：2 分钟</span>
+            <a class="post-link" href="/programming/python/print-for-python/">
+              2017-07-23 | Python 中的 Print
+            </a>
+            <span class="read-info">字数：798 预计时间：2 分钟</span>
         </div>
     
 </div>
@@ -201,52 +203,67 @@
             <section id="sidebar">
                 
                     <aside class="sidebar">
-    <div id="search" class="card">
-        <div id="search-key">
-            <i class="icon-search icon-large"></i>
-            <form action="//www.google.com/search" target="_blank" class="search-form">
-                <input type="text" name="q" maxlength="20" placeholder="搜索...">
-                <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-            </form>
-        </div>
-    </div>
-        <div id="avatar" class="card">
-            <a href=/page/about>
-                <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
-            </a>
-            <div id="motto">
-                <span>品水如酒，愚醉……</span>
-            </div>
-        </div>
-        <div id="categories" class="card">
-            <div id="category-title">文章分类</div>
-            
-            <li class="category">
-                <a href=/programming/>编程体验</a>
-                
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/batch/>batch</a>
-                        </ol>
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/python/>python</a>
-                        </ol>
-                    
-                
-            </li>
-            
-            <li class="category">
-                <a href=/other/>其他分享</a>
-                
-            </li>
-            
-            <li class="category">
-                <a href=/blog/>生活感悟</a>
-                
-            </li>
-            
+  <div id="avatar" class="card">
+      <a href=/page/about>
+          <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
+      </a>
+      <div id="motto">
+          <span>品水如酒，愚醉……</span>
       </div>
+  </div>
+  <div id="categories" class="card">
+      <div class="card-title sidebar-title">文章分类</div>
+      
+      <li class="category">
+          <a href=/programming/>编程体验</a>
+          
+              
+                  <ol class="subcategory">
+                      <a href=/programming/batch/>batch</a>
+                  </ol>
+              
+                  <ol class="subcategory">
+                      <a href=/programming/python/>python</a>
+                  </ol>
+              
+          
+      </li>
+      
+      <li class="category">
+          <a href=/other/>其他分享</a>
+          
+      </li>
+      
+      <li class="category">
+          <a href=/blog/>生活感悟</a>
+          
+      </li>
+      
+  </div>
+  <div id="communication" class="card">
+    <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>TG 群组: <a href="https://t.me/yixuju" target="_blank" rel="nofollow">t.me/yixuju</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>QQ 群组: <a href="https://jq.qq.com/?_wv=1027&amp;k=XKIJXRol" target="_blank" rel="nofollow">495793229</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>联系邮箱: <a href="mailto:yi_Xu@yixuju.cn" target="_blank" rel="nofollow">yi_Xu@yixuju.cn</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>微信公众号: <a href="" target="_blank" rel="nofollow">逸絮居</a></span>
+    </li>
+    
+</div>
 </aside>
                 
             </section>
@@ -257,10 +274,10 @@
             target = "_blank"
         
         target = "_self" rel="nofollow">
-            &copy; 2014 - 2020 yi_Xu
+            &copy; 2014 - 2021 yi_Xu
     </a>
     <i class="icon-lightbulb"></i>
-    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo</a>
+    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo 0.80.0</a>
     <i class="icon-coffee"></i>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     

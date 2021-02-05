@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Firstblog on 逸絮居</title>
+    <title>firstblog on 逸絮居</title>
     <link>https://www.yixuju.cn/tags/firstblog/</link>
-    <description>Recent content in Firstblog on 逸絮居</description>
+    <description>Recent content in firstblog on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
-    <lastBuildDate>Tue, 21 Mar 2017 21:10:50 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.yixuju.cn/tags/firstblog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 21 Mar 2017 21:10:50 +0000</lastBuildDate><atom:link href="https://www.yixuju.cn/tags/firstblog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>good night</title>
       <link>https://www.yixuju.cn/other/good-night/</link>

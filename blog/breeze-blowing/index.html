@@ -10,7 +10,7 @@
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='微风拂过，留下几许凉意……让往事如落红飘下，看明朝有苍树擎天。' />
 <meta name="keywords" content='web,python,blog,batch' />
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.80.0" />
 <meta property="og:url" content='https://www.yixuju.cn/blog/breeze-blowing/' />
 <meta property="og:title" content='微风拂过，留下几许凉意' />
 <meta property="og:description" content='微风拂过，留下几许凉意……让往事如落红飘下，看明朝有苍树擎天。' />
@@ -35,9 +35,10 @@
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
-<link rel="stylesheet" href=/css/style.css />
-<script src=/js/jquery-3.3.1.min.js></script>
-<script src=/js/custom.js></script>
+<link rel="stylesheet" href=/css/style.min.css />
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script src=/js/custom.min.js></script>
         
         
     </head>
@@ -58,15 +59,7 @@
     </div>
 </div>
 <div id="jquery-menu" class="mobile">
-    <div id="mobile-search">
-        <i class="icon-search icon-large"></i>
-        <form action="//www.google.com/search" target="_blank" class="search-form">
-            <input type="text" name="q" maxlength="20" placeholder="搜索...">
-            <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-        </form>
-    </div>
     <ul id="mobile-menu">
-        
         
             
                 <li>
@@ -109,6 +102,9 @@
             
         
     
+    <li id="mobile-toc-title">目录<i id="down-up" class="icon-double-angle-down"></i>
+    <div id="mobile-toc" class="mobile"><nav id="TableOfContents"></nav></div></li>
+
 </div>
         <header>
     <div id="header">
@@ -158,11 +154,8 @@
     </div>
     <div id="post-cotent">
         <p>微风拂过，留下几许凉意……让往事如落红飘下，看明朝有苍树擎天。</p>
-
 <p>风扇微摇，送来几许清风，燕雀低鸣，绕梁惹人小睡。混混沌沌，岁月辗转呈现在我眼前，清清白白，阳光下的道路却异常难走。风儿像只会说话的精灵，轻轻的在耳边安抚我燥热的心。心不自觉地停顿了，悄然融在这自然的万物中。我看到风儿的微红，是夹杂着火，我听见风儿的细声，是流淌的水。水火本不相容，却在这风中变得简单了。它们归为同一，寄神于虚空，赋体于万物。像是本该如此，我倒显得唐突了。</p>
-
 <p>画卷在眼前翻转，万物在心底重塑，只有那风还是原样。我捉摸不清它的衣角，它却偷偷送来禅衣。我在草蒲上低头思物，身体变得轻盈，像个会穿风的筛子，头顶上的心静了，身体也静了，眼前的画卷，心底的万物，都静了。像匆匆睡着一样，凝结成一面通明的镜子，让人不忍撞破，却又太过明了。风拂过，就像没有来过，镜子没有碎，却悄然变得生动了。仿佛谁都没有察觉，又仿佛谁都抿嘴笑了……阳光下的风儿，真是调皮。</p>
-
 <p>就像重新开始一样，似乎没有什么能逃过时间的步伐，留在原地的只有不变的风儿。不知多年后回到这里的我，还是否记得那一缕微风——留下的几许凉意。</p>
     </div>
     <div id="copyright" class="card">
@@ -175,7 +168,8 @@
     </div>
 
 
-    <div>文章标签：<a href="https://www.yixuju.cntags/blog/">#blog&nbsp</a>
+    <div>文章标签：
+      <a href="https://www.yixuju.cntags/blog/">#blog&nbsp</a>
     </div>
 
 
@@ -186,7 +180,7 @@
     <div>原始链接：https://www.yixuju.cn/blog/breeze-blowing/<span class="copy-path" title="点击复制文章链接" data-clipboard-demo="" data-clipboard-action="copy" data-clipboard-text='https://www.yixuju.cn/blog/breeze-blowing/' aria-label="复制成功！"><i class="icon-copy"></i></span>
     </div>
 
-    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank rel="nofollow">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </div>
 
 </div>
@@ -212,54 +206,76 @@
             <section id="sidebar">
                 
     <aside class="sidebar">
-    <div id="search" class="card">
-        <div id="search-key">
-            <i class="icon-search icon-large"></i>
-            <form action="//www.google.com/search" target="_blank" class="search-form">
-                <input type="text" name="q" maxlength="20" placeholder="搜索...">
-                <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-            </form>
-        </div>
-    </div>
-        <div id="avatar" class="card">
-            <a href=/page/about>
-                <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
-            </a>
-            <div id="motto">
-                <span>品水如酒，愚醉……</span>
-            </div>
-        </div>
-        <div id="categories" class="card">
-            <div id="category-title">文章分类</div>
-            
-            <li class="category">
-                <a href=/programming/>编程体验</a>
-                
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/batch/>batch</a>
-                        </ol>
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/python/>python</a>
-                        </ol>
-                    
-                
-            </li>
-            
-            <li class="category">
-                <a href=/other/>其他分享</a>
-                
-            </li>
-            
-            <li class="category">
-                <a href=/blog/>生活感悟</a>
-                
-            </li>
-            
+  <div id="avatar" class="card">
+      <a href=/page/about>
+          <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
+      </a>
+      <div id="motto">
+          <span>品水如酒，愚醉……</span>
       </div>
+  </div>
+  <div id="categories" class="card">
+      <div class="card-title sidebar-title">文章分类</div>
+      
+      <li class="category">
+          <a href=/programming/>编程体验</a>
+          
+              
+                  <ol class="subcategory">
+                      <a href=/programming/batch/>batch</a>
+                  </ol>
+              
+                  <ol class="subcategory">
+                      <a href=/programming/python/>python</a>
+                  </ol>
+              
+          
+      </li>
+      
+      <li class="category">
+          <a href=/other/>其他分享</a>
+          
+      </li>
+      
+      <li class="category">
+          <a href=/blog/>生活感悟</a>
+          
+      </li>
+      
+  </div>
+  <div id="communication" class="card">
+    <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>TG 群组: <a href="https://t.me/yixuju" target="_blank" rel="nofollow">t.me/yixuju</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>QQ 群组: <a href="https://jq.qq.com/?_wv=1027&amp;k=XKIJXRol" target="_blank" rel="nofollow">495793229</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>联系邮箱: <a href="mailto:yi_Xu@yixuju.cn" target="_blank" rel="nofollow">yi_Xu@yixuju.cn</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>微信公众号: <a href="" target="_blank" rel="nofollow">逸絮居</a></span>
+    </li>
+    
+</div>
 </aside>
     
+    <aside class="sidebar">
+        <div id="post-menu" class="card">
+            <div class="card-title sidebar-title">目录</div>
+            <div id="toc"><nav id="TableOfContents"></nav></div>
+        </div>
+    </aside>
+
 
             </section>
         </div>
@@ -269,10 +285,10 @@
             target = "_blank"
         
         target = "_self" rel="nofollow">
-            &copy; 2014 - 2020 yi_Xu
+            &copy; 2014 - 2021 yi_Xu
     </a>
     <i class="icon-lightbulb"></i>
-    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo</a>
+    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo 0.80.0</a>
     <i class="icon-coffee"></i>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     

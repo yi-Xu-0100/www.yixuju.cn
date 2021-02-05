@@ -10,7 +10,7 @@
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='阳光变得强烈极了，空气似乎也能灼烧起皮肤，血液沸腾，汗水不断落下，消散，似乎从未属于我……不知道是我心乱了，还是天热了，我变得连动都不想动，但就是不动，也让我心烦。' />
 <meta name="keywords" content='web,python,blog,batch' />
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.80.0" />
 <meta property="og:url" content='https://www.yixuju.cn/blog/summer-afternoon/' />
 <meta property="og:title" content='夏午' />
 <meta property="og:description" content='阳光变得强烈极了，空气似乎也能灼烧起皮肤，血液沸腾，汗水不断落下，消散，似乎从未属于我……不知道是我心乱了，还是天热了，我变得连动都不想动，但就是不动，也让我心烦。' />
@@ -35,9 +35,10 @@
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
-<link rel="stylesheet" href=/css/style.css />
-<script src=/js/jquery-3.3.1.min.js></script>
-<script src=/js/custom.js></script>
+<link rel="stylesheet" href=/css/style.min.css />
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script src=/js/custom.min.js></script>
         
         
     </head>
@@ -58,15 +59,7 @@
     </div>
 </div>
 <div id="jquery-menu" class="mobile">
-    <div id="mobile-search">
-        <i class="icon-search icon-large"></i>
-        <form action="//www.google.com/search" target="_blank" class="search-form">
-            <input type="text" name="q" maxlength="20" placeholder="搜索...">
-            <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-        </form>
-    </div>
     <ul id="mobile-menu">
-        
         
             
                 <li>
@@ -109,6 +102,9 @@
             
         
     
+    <li id="mobile-toc-title">目录<i id="down-up" class="icon-double-angle-down"></i>
+    <div id="mobile-toc" class="mobile"><nav id="TableOfContents"></nav></div></li>
+
 </div>
         <header>
     <div id="header">
@@ -158,13 +154,9 @@
     </div>
     <div id="post-cotent">
         <p>阳光变得强烈极了，空气似乎也能灼烧起皮肤，血液沸腾，汗水不断落下，消散，似乎从未属于我……不知道是我心乱了，还是天热了，我变得连动都不想动，但就是不动，也让我心烦。</p>
-
 <p>即将步入六月，六月的天，娃娃的脸，说变就变。虽是农谚，细细品来，现在却可暗喻着许多事。十一年前的我啥也不知道，只能微微感觉到天热了；五年前的我满怀憧憬，迎接着暑假，等待着新的旅程；两年前的我心怀忐忑，等待着一个十字路口；现在的我，有点迷惘，准备着去另一个“世界”……不知道明年的我又是，怎样？</p>
-
 <p>自己苦苦寻找着什么， 别人的目光，还是自己的梦想，我知道既然在这个世上就逃不了这些。但我还是想给自己留点空间，在时间轴上的这段，我希望活得没有任何意义，简单到全无悲乐，充实到看不到别人。独自碎碎叨叨着什么，随风流走，只在我眼前的空气里划过优美的线条，然后就不剩什么了。巧合铸就了我，虚空铸就了我，矛盾铸就了我，悲乐铸就了我。我似乎留不下什么，也似乎带不走什么，所以我又踏上征程，苦苦寻找着什么……</p>
-
 <p>在寻找的路上，我见过情感。它像个相对的词，没有绝对的特殊化，细细品时反而失去滋味，不经意间又给我带来触动 。不知道什么时候理解的，反是我已处之泰然，它总会带给我惊与喜的……</p>
-
 <p>自言自语就像是在做梦，没有极强的逻辑，没有深沉的因果 。琐列着自己的事，跳出后，我又会变成别人眼里的我，我分不清哪个是真的我。即使两个我你都认识，那又如何，总归只是你眼中的我。我不曾想去骗什么人，只是我和你们一样被我自己骗了。真真假假，虚虚实实，吾独立于世，愿以道心观世，佛性处世，儒行践世，非因留恋人烟，实属苦心乐志，只求百年逾老时，知无悔于己。</p>
     </div>
     <div id="copyright" class="card">
@@ -177,7 +169,8 @@
     </div>
 
 
-    <div>文章标签：<a href="https://www.yixuju.cntags/blog/">#blog&nbsp</a>
+    <div>文章标签：
+      <a href="https://www.yixuju.cntags/blog/">#blog&nbsp</a>
     </div>
 
 
@@ -188,7 +181,7 @@
     <div>原始链接：https://www.yixuju.cn/blog/summer-afternoon/<span class="copy-path" title="点击复制文章链接" data-clipboard-demo="" data-clipboard-action="copy" data-clipboard-text='https://www.yixuju.cn/blog/summer-afternoon/' aria-label="复制成功！"><i class="icon-copy"></i></span>
     </div>
 
-    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank rel="nofollow">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </div>
 
 </div>
@@ -214,54 +207,76 @@
             <section id="sidebar">
                 
     <aside class="sidebar">
-    <div id="search" class="card">
-        <div id="search-key">
-            <i class="icon-search icon-large"></i>
-            <form action="//www.google.com/search" target="_blank" class="search-form">
-                <input type="text" name="q" maxlength="20" placeholder="搜索...">
-                <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-            </form>
-        </div>
-    </div>
-        <div id="avatar" class="card">
-            <a href=/page/about>
-                <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
-            </a>
-            <div id="motto">
-                <span>品水如酒，愚醉……</span>
-            </div>
-        </div>
-        <div id="categories" class="card">
-            <div id="category-title">文章分类</div>
-            
-            <li class="category">
-                <a href=/programming/>编程体验</a>
-                
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/batch/>batch</a>
-                        </ol>
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/python/>python</a>
-                        </ol>
-                    
-                
-            </li>
-            
-            <li class="category">
-                <a href=/other/>其他分享</a>
-                
-            </li>
-            
-            <li class="category">
-                <a href=/blog/>生活感悟</a>
-                
-            </li>
-            
+  <div id="avatar" class="card">
+      <a href=/page/about>
+          <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
+      </a>
+      <div id="motto">
+          <span>品水如酒，愚醉……</span>
       </div>
+  </div>
+  <div id="categories" class="card">
+      <div class="card-title sidebar-title">文章分类</div>
+      
+      <li class="category">
+          <a href=/programming/>编程体验</a>
+          
+              
+                  <ol class="subcategory">
+                      <a href=/programming/batch/>batch</a>
+                  </ol>
+              
+                  <ol class="subcategory">
+                      <a href=/programming/python/>python</a>
+                  </ol>
+              
+          
+      </li>
+      
+      <li class="category">
+          <a href=/other/>其他分享</a>
+          
+      </li>
+      
+      <li class="category">
+          <a href=/blog/>生活感悟</a>
+          
+      </li>
+      
+  </div>
+  <div id="communication" class="card">
+    <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>TG 群组: <a href="https://t.me/yixuju" target="_blank" rel="nofollow">t.me/yixuju</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>QQ 群组: <a href="https://jq.qq.com/?_wv=1027&amp;k=XKIJXRol" target="_blank" rel="nofollow">495793229</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>联系邮箱: <a href="mailto:yi_Xu@yixuju.cn" target="_blank" rel="nofollow">yi_Xu@yixuju.cn</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>微信公众号: <a href="" target="_blank" rel="nofollow">逸絮居</a></span>
+    </li>
+    
+</div>
 </aside>
     
+    <aside class="sidebar">
+        <div id="post-menu" class="card">
+            <div class="card-title sidebar-title">目录</div>
+            <div id="toc"><nav id="TableOfContents"></nav></div>
+        </div>
+    </aside>
+
 
             </section>
         </div>
@@ -271,10 +286,10 @@
             target = "_blank"
         
         target = "_self" rel="nofollow">
-            &copy; 2014 - 2020 yi_Xu
+            &copy; 2014 - 2021 yi_Xu
     </a>
     <i class="icon-lightbulb"></i>
-    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo</a>
+    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo 0.80.0</a>
     <i class="icon-coffee"></i>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     

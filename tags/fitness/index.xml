@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fitness on 逸絮居</title>
+    <title>fitness on 逸絮居</title>
     <link>https://www.yixuju.cn/tags/fitness/</link>
-    <description>Recent content in Fitness on 逸絮居</description>
+    <description>Recent content in fitness on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
-    <lastBuildDate>Wed, 30 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.yixuju.cn/tags/fitness/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 30 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yixuju.cn/tags/fitness/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【阅读记录】第三期：无械健身初探</title>
       <link>https://www.yixuju.cn/blog/reading-record-1/</link>

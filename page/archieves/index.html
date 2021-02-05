@@ -10,7 +10,7 @@
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='A website about yi_Xu. The content includes the sharing of programming experience and blog about life perception.' />
 <meta name="keywords" content='web,python,blog,batch' />
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.80.0" />
 <meta property="og:url" content='https://www.yixuju.cn/page/archieves/' />
 <meta property="og:title" content='归档' />
 <meta property="og:description" content='A website about yi_Xu. The content includes the sharing of programming experience and blog about life perception.' />
@@ -35,9 +35,10 @@
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
-<link rel="stylesheet" href=/css/style.css />
-<script src=/js/jquery-3.3.1.min.js></script>
-<script src=/js/custom.js></script>
+<link rel="stylesheet" href=/css/style.min.css />
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script src=/js/custom.min.js></script>
         
         
     </head>
@@ -58,15 +59,7 @@
     </div>
 </div>
 <div id="jquery-menu" class="mobile">
-    <div id="mobile-search">
-        <i class="icon-search icon-large"></i>
-        <form action="//www.google.com/search" target="_blank" class="search-form">
-            <input type="text" name="q" maxlength="20" placeholder="搜索...">
-            <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-        </form>
-    </div>
     <ul id="mobile-menu">
-        
         
             
                 <li>
@@ -109,6 +102,9 @@
             
         
     
+    <li id="mobile-toc-title">目录<i id="down-up" class="icon-double-angle-down"></i>
+    <div id="mobile-toc" class="mobile"><nav id="TableOfContents"></nav></div></li>
+
 </div>
         <header>
     <div id="header">
@@ -189,63 +185,63 @@
         <h2>Tags</h2>
     <ul id="all-tags">
       
-            <a href='/tags/bat' class="button tag">bat<span class="tag-count">3</span></a>
+            <a href='/tags/bat' class="button tag">bat<sup class="tag-count">3</sup></a>
       
-            <a href='/tags/blog' class="button tag">blog<span class="tag-count">74</span></a>
+            <a href='/tags/blog' class="button tag">blog<sup class="tag-count">74</sup></a>
       
-            <a href='/tags/cmd' class="button tag">cmd<span class="tag-count">4</span></a>
+            <a href='/tags/cmd' class="button tag">cmd<sup class="tag-count">4</sup></a>
       
-            <a href='/tags/csv' class="button tag">csv<span class="tag-count">1</span></a>
+            <a href='/tags/csv' class="button tag">csv<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/ecs' class="button tag">ecs<span class="tag-count">2</span></a>
+            <a href='/tags/ecs' class="button tag">ecs<sup class="tag-count">2</sup></a>
       
-            <a href='/tags/firstblog' class="button tag">firstblog<span class="tag-count">1</span></a>
+            <a href='/tags/firstblog' class="button tag">firstblog<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/fitness' class="button tag">fitness<span class="tag-count">1</span></a>
+            <a href='/tags/fitness' class="button tag">fitness<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/git' class="button tag">git<span class="tag-count">2</span></a>
+            <a href='/tags/git' class="button tag">git<sup class="tag-count">2</sup></a>
       
-            <a href='/tags/github' class="button tag">github<span class="tag-count">2</span></a>
+            <a href='/tags/github' class="button tag">github<sup class="tag-count">2</sup></a>
       
-            <a href='/tags/hexo' class="button tag">hexo<span class="tag-count">3</span></a>
+            <a href='/tags/hexo' class="button tag">hexo<sup class="tag-count">3</sup></a>
       
-            <a href='/tags/html' class="button tag">html<span class="tag-count">1</span></a>
+            <a href='/tags/html' class="button tag">html<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/hugo' class="button tag">hugo<span class="tag-count">1</span></a>
+            <a href='/tags/hugo' class="button tag">hugo<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/input' class="button tag">input<span class="tag-count">1</span></a>
+            <a href='/tags/input' class="button tag">input<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/json' class="button tag">json<span class="tag-count">1</span></a>
+            <a href='/tags/json' class="button tag">json<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/log' class="button tag">log<span class="tag-count">1</span></a>
+            <a href='/tags/log' class="button tag">log<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/powershell' class="button tag">powershell<span class="tag-count">1</span></a>
+            <a href='/tags/powershell' class="button tag">powershell<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/print' class="button tag">print<span class="tag-count">1</span></a>
+            <a href='/tags/print' class="button tag">print<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/proxy' class="button tag">proxy<span class="tag-count">1</span></a>
+            <a href='/tags/proxy' class="button tag">proxy<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/python2' class="button tag">python2<span class="tag-count">1</span></a>
+            <a href='/tags/python2' class="button tag">python2<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/python3' class="button tag">python3<span class="tag-count">4</span></a>
+            <a href='/tags/python3' class="button tag">python3<sup class="tag-count">4</sup></a>
       
-            <a href='/tags/reading' class="button tag">reading<span class="tag-count">3</span></a>
+            <a href='/tags/reading' class="button tag">reading<sup class="tag-count">3</sup></a>
       
-            <a href='/tags/record' class="button tag">record<span class="tag-count">1</span></a>
+            <a href='/tags/record' class="button tag">record<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/simiki' class="button tag">simiki<span class="tag-count">1</span></a>
+            <a href='/tags/simiki' class="button tag">simiki<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/terminal' class="button tag">terminal<span class="tag-count">1</span></a>
+            <a href='/tags/terminal' class="button tag">terminal<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/theme' class="button tag">theme<span class="tag-count">1</span></a>
+            <a href='/tags/theme' class="button tag">theme<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/ubuntu' class="button tag">ubuntu<span class="tag-count">1</span></a>
+            <a href='/tags/ubuntu' class="button tag">ubuntu<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/windows' class="button tag">windows<span class="tag-count">1</span></a>
+            <a href='/tags/windows' class="button tag">windows<sup class="tag-count">1</sup></a>
       
-            <a href='/tags/yaml' class="button tag">yaml<span class="tag-count">2</span></a>
+            <a href='/tags/yaml' class="button tag">yaml<sup class="tag-count">2</sup></a>
       
-            <a href='/tags/yelee' class="button tag">yelee<span class="tag-count">1</span></a>
+            <a href='/tags/yelee' class="button tag">yelee<sup class="tag-count">1</sup></a>
       
     </ul>
     </div>
@@ -269,52 +265,67 @@
             <section id="sidebar">
                 
                     <aside class="sidebar">
-    <div id="search" class="card">
-        <div id="search-key">
-            <i class="icon-search icon-large"></i>
-            <form action="//www.google.com/search" target="_blank" class="search-form">
-                <input type="text" name="q" maxlength="20" placeholder="搜索...">
-                <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-            </form>
-        </div>
-    </div>
-        <div id="avatar" class="card">
-            <a href=/page/about>
-                <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
-            </a>
-            <div id="motto">
-                <span>品水如酒，愚醉……</span>
-            </div>
-        </div>
-        <div id="categories" class="card">
-            <div id="category-title">文章分类</div>
-            
-            <li class="category">
-                <a href=/programming/>编程体验</a>
-                
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/batch/>batch</a>
-                        </ol>
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/python/>python</a>
-                        </ol>
-                    
-                
-            </li>
-            
-            <li class="category">
-                <a href=/other/>其他分享</a>
-                
-            </li>
-            
-            <li class="category">
-                <a href=/blog/>生活感悟</a>
-                
-            </li>
-            
+  <div id="avatar" class="card">
+      <a href=/page/about>
+          <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
+      </a>
+      <div id="motto">
+          <span>品水如酒，愚醉……</span>
       </div>
+  </div>
+  <div id="categories" class="card">
+      <div class="card-title sidebar-title">文章分类</div>
+      
+      <li class="category">
+          <a href=/programming/>编程体验</a>
+          
+              
+                  <ol class="subcategory">
+                      <a href=/programming/batch/>batch</a>
+                  </ol>
+              
+                  <ol class="subcategory">
+                      <a href=/programming/python/>python</a>
+                  </ol>
+              
+          
+      </li>
+      
+      <li class="category">
+          <a href=/other/>其他分享</a>
+          
+      </li>
+      
+      <li class="category">
+          <a href=/blog/>生活感悟</a>
+          
+      </li>
+      
+  </div>
+  <div id="communication" class="card">
+    <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>TG 群组: <a href="https://t.me/yixuju" target="_blank" rel="nofollow">t.me/yixuju</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>QQ 群组: <a href="https://jq.qq.com/?_wv=1027&amp;k=XKIJXRol" target="_blank" rel="nofollow">495793229</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>联系邮箱: <a href="mailto:yi_Xu@yixuju.cn" target="_blank" rel="nofollow">yi_Xu@yixuju.cn</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>微信公众号: <a href="" target="_blank" rel="nofollow">逸絮居</a></span>
+    </li>
+    
+</div>
 </aside>
                 
             </section>
@@ -325,10 +336,10 @@
             target = "_blank"
         
         target = "_self" rel="nofollow">
-            &copy; 2014 - 2020 yi_Xu
+            &copy; 2014 - 2021 yi_Xu
     </a>
     <i class="icon-lightbulb"></i>
-    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo</a>
+    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo 0.80.0</a>
     <i class="icon-coffee"></i>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     

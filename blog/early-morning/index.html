@@ -10,7 +10,7 @@
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='清晨总是带着雨露，朦胧的水汽却也反射着柔和的旭日红光。透过窗子望过去，暖色带来了一丝清晨的味道。' />
 <meta name="keywords" content='web,python,blog,batch' />
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.80.0" />
 <meta property="og:url" content='https://www.yixuju.cn/blog/early-morning/' />
 <meta property="og:title" content='清晨' />
 <meta property="og:description" content='清晨总是带着雨露，朦胧的水汽却也反射着柔和的旭日红光。透过窗子望过去，暖色带来了一丝清晨的味道。' />
@@ -35,9 +35,10 @@
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
-<link rel="stylesheet" href=/css/style.css />
-<script src=/js/jquery-3.3.1.min.js></script>
-<script src=/js/custom.js></script>
+<link rel="stylesheet" href=/css/style.min.css />
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script src=/js/custom.min.js></script>
         
         
     </head>
@@ -58,15 +59,7 @@
     </div>
 </div>
 <div id="jquery-menu" class="mobile">
-    <div id="mobile-search">
-        <i class="icon-search icon-large"></i>
-        <form action="//www.google.com/search" target="_blank" class="search-form">
-            <input type="text" name="q" maxlength="20" placeholder="搜索...">
-            <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-        </form>
-    </div>
     <ul id="mobile-menu">
-        
         
             
                 <li>
@@ -109,6 +102,9 @@
             
         
     
+    <li id="mobile-toc-title">目录<i id="down-up" class="icon-double-angle-down"></i>
+    <div id="mobile-toc" class="mobile"><nav id="TableOfContents"></nav></div></li>
+
 </div>
         <header>
     <div id="header">
@@ -158,7 +154,6 @@
     </div>
     <div id="post-cotent">
         <p>清晨总是带着雨露，朦胧的水汽却也反射着柔和的旭日红光。透过窗子望过去，暖色带来了一丝清晨的味道。</p>
-
 <p>窗外的水塔遮住了最耀眼的日光，略有反差的对比却十分和谐。日光遮不住扑面而来的绿意， 平添了一份生机盎然，略显净白的小道，微黄的土地以及深沉的瓦砾，偶尔的狗吠和鸡鸣，鸟鸣和蝉声，清晨并非那么宁静，拗不过灯光，转眼回到小屋，桌几上散乱着一些书，几只笔，伏案，低头，回到我那小世界，沉浸在这大世界，挺喜欢清晨，它带给我宁静与简单的热闹。</p>
     </div>
     <div id="copyright" class="card">
@@ -171,7 +166,8 @@
     </div>
 
 
-    <div>文章标签：<a href="https://www.yixuju.cntags/blog/">#blog&nbsp</a>
+    <div>文章标签：
+      <a href="https://www.yixuju.cntags/blog/">#blog&nbsp</a>
     </div>
 
 
@@ -182,7 +178,7 @@
     <div>原始链接：https://www.yixuju.cn/blog/early-morning/<span class="copy-path" title="点击复制文章链接" data-clipboard-demo="" data-clipboard-action="copy" data-clipboard-text='https://www.yixuju.cn/blog/early-morning/' aria-label="复制成功！"><i class="icon-copy"></i></span>
     </div>
 
-    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank rel="nofollow">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </div>
 
 </div>
@@ -204,54 +200,76 @@
             <section id="sidebar">
                 
     <aside class="sidebar">
-    <div id="search" class="card">
-        <div id="search-key">
-            <i class="icon-search icon-large"></i>
-            <form action="//www.google.com/search" target="_blank" class="search-form">
-                <input type="text" name="q" maxlength="20" placeholder="搜索...">
-                <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-            </form>
-        </div>
-    </div>
-        <div id="avatar" class="card">
-            <a href=/page/about>
-                <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
-            </a>
-            <div id="motto">
-                <span>品水如酒，愚醉……</span>
-            </div>
-        </div>
-        <div id="categories" class="card">
-            <div id="category-title">文章分类</div>
-            
-            <li class="category">
-                <a href=/programming/>编程体验</a>
-                
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/batch/>batch</a>
-                        </ol>
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/python/>python</a>
-                        </ol>
-                    
-                
-            </li>
-            
-            <li class="category">
-                <a href=/other/>其他分享</a>
-                
-            </li>
-            
-            <li class="category">
-                <a href=/blog/>生活感悟</a>
-                
-            </li>
-            
+  <div id="avatar" class="card">
+      <a href=/page/about>
+          <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
+      </a>
+      <div id="motto">
+          <span>品水如酒，愚醉……</span>
       </div>
+  </div>
+  <div id="categories" class="card">
+      <div class="card-title sidebar-title">文章分类</div>
+      
+      <li class="category">
+          <a href=/programming/>编程体验</a>
+          
+              
+                  <ol class="subcategory">
+                      <a href=/programming/batch/>batch</a>
+                  </ol>
+              
+                  <ol class="subcategory">
+                      <a href=/programming/python/>python</a>
+                  </ol>
+              
+          
+      </li>
+      
+      <li class="category">
+          <a href=/other/>其他分享</a>
+          
+      </li>
+      
+      <li class="category">
+          <a href=/blog/>生活感悟</a>
+          
+      </li>
+      
+  </div>
+  <div id="communication" class="card">
+    <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>TG 群组: <a href="https://t.me/yixuju" target="_blank" rel="nofollow">t.me/yixuju</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>QQ 群组: <a href="https://jq.qq.com/?_wv=1027&amp;k=XKIJXRol" target="_blank" rel="nofollow">495793229</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>联系邮箱: <a href="mailto:yi_Xu@yixuju.cn" target="_blank" rel="nofollow">yi_Xu@yixuju.cn</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>微信公众号: <a href="" target="_blank" rel="nofollow">逸絮居</a></span>
+    </li>
+    
+</div>
 </aside>
     
+    <aside class="sidebar">
+        <div id="post-menu" class="card">
+            <div class="card-title sidebar-title">目录</div>
+            <div id="toc"><nav id="TableOfContents"></nav></div>
+        </div>
+    </aside>
+
 
             </section>
         </div>
@@ -261,10 +279,10 @@
             target = "_blank"
         
         target = "_self" rel="nofollow">
-            &copy; 2014 - 2020 yi_Xu
+            &copy; 2014 - 2021 yi_Xu
     </a>
     <i class="icon-lightbulb"></i>
-    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo</a>
+    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo 0.80.0</a>
     <i class="icon-coffee"></i>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     

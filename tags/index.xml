@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 逸絮居</title>
@@ -6,31 +6,9 @@
     <description>Recent content in Tags on 逸絮居</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>yi_Xu</copyright>
-    <lastBuildDate>Fri, 21 Aug 2020 09:24:47 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.yixuju.cn/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 28 Aug 2020 08:40:39 +0000</lastBuildDate><atom:link href="https://www.yixuju.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bat</title>
-      <link>https://www.yixuju.cn/tags/bat/</link>
-      <pubDate>Fri, 21 Aug 2020 09:24:47 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/bat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://www.yixuju.cn/tags/blog/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cmd</title>
+      <title>cmd</title>
       <link>https://www.yixuju.cn/tags/cmd/</link>
       <pubDate>Fri, 28 Aug 2020 08:40:39 +0000</pubDate>
       
@@ -39,43 +17,7 @@
     </item>
     
     <item>
-      <title>Csv</title>
-      <link>https://www.yixuju.cn/tags/csv/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/csv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ecs</title>
-      <link>https://www.yixuju.cn/tags/ecs/</link>
-      <pubDate>Sun, 19 Nov 2017 21:29:55 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/ecs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Firstblog</title>
-      <link>https://www.yixuju.cn/tags/firstblog/</link>
-      <pubDate>Tue, 21 Mar 2017 21:10:50 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/firstblog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fitness</title>
-      <link>https://www.yixuju.cn/tags/fitness/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/fitness/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
+      <title>git</title>
       <link>https://www.yixuju.cn/tags/git/</link>
       <pubDate>Fri, 28 Aug 2020 08:40:39 +0000</pubDate>
       
@@ -84,7 +26,70 @@
     </item>
     
     <item>
-      <title>Github</title>
+      <title>powershell</title>
+      <link>https://www.yixuju.cn/tags/powershell/</link>
+      <pubDate>Fri, 28 Aug 2020 08:40:39 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://www.yixuju.cn/tags/proxy/</link>
+      <pubDate>Fri, 28 Aug 2020 08:40:39 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://www.yixuju.cn/tags/windows/</link>
+      <pubDate>Fri, 28 Aug 2020 08:40:39 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bat</title>
+      <link>https://www.yixuju.cn/tags/bat/</link>
+      <pubDate>Fri, 21 Aug 2020 09:24:47 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/bat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://www.yixuju.cn/tags/blog/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fitness</title>
+      <link>https://www.yixuju.cn/tags/fitness/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/fitness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>https://www.yixuju.cn/tags/reading/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
       <link>https://www.yixuju.cn/tags/github/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -93,7 +98,7 @@
     </item>
     
     <item>
-      <title>Hexo</title>
+      <title>hexo</title>
       <link>https://www.yixuju.cn/tags/hexo/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -102,16 +107,7 @@
     </item>
     
     <item>
-      <title>Html</title>
-      <link>https://www.yixuju.cn/tags/html/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
+      <title>hugo</title>
       <link>https://www.yixuju.cn/tags/hugo/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
@@ -120,16 +116,7 @@
     </item>
     
     <item>
-      <title>Input</title>
-      <link>https://www.yixuju.cn/tags/input/</link>
-      <pubDate>Sun, 23 Jul 2017 14:22:28 +0000</pubDate>
-      
-      <guid>https://www.yixuju.cn/tags/input/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Json</title>
+      <title>json</title>
       <link>https://www.yixuju.cn/tags/json/</link>
       <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
@@ -138,11 +125,20 @@
     </item>
     
     <item>
-      <title>Log</title>
-      <link>https://www.yixuju.cn/tags/log/</link>
-      <pubDate>Thu, 17 Aug 2017 13:19:48 +0000</pubDate>
+      <title>python3</title>
+      <link>https://www.yixuju.cn/tags/python3/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yixuju.cn/tags/log/</guid>
+      <guid>https://www.yixuju.cn/tags/python3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yaml</title>
+      <link>https://www.yixuju.cn/tags/yaml/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yixuju.cn/tags/yaml/</guid>
       <description></description>
     </item>
     

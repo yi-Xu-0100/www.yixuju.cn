@@ -10,7 +10,7 @@
 <meta name="author" content='yi_Xu' />
 <meta name="description" content='在 《编写 bat 批处理脚本文件来设置自动推送》 中，我们使用强制覆盖的方式忽略仓库的错误，造成没有相应的版本控制信息被保存下来，这次，通过新的复制 git 信息的方法，将每次的站点更新保存到 github 的 commit 信息中。' />
 <meta name="keywords" content='web,python,blog,batch' />
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.80.0" />
 <meta property="og:url" content='https://www.yixuju.cn/programming/batch/hugo-push-1/' />
 <meta property="og:title" content='通过复制 git 信息提交网站更新 commit' />
 <meta property="og:description" content='在 《编写 bat 批处理脚本文件来设置自动推送》 中，我们使用强制覆盖的方式忽略仓库的错误，造成没有相应的版本控制信息被保存下来，这次，通过新的复制 git 信息的方法，将每次的站点更新保存到 github 的 commit 信息中。' />
@@ -35,9 +35,10 @@
 <link rel="icon" type="image/x-icon" href=/favicon.ico />
 <link rel="icon" type="image/png" href=/favicon.png />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
-<link rel="stylesheet" href=/css/style.css />
-<script src=/js/jquery-3.3.1.min.js></script>
-<script src=/js/custom.js></script>
+<link rel="stylesheet" href=/css/style.min.css />
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script src=/js/custom.min.js></script>
         
         
     </head>
@@ -58,15 +59,7 @@
     </div>
 </div>
 <div id="jquery-menu" class="mobile">
-    <div id="mobile-search">
-        <i class="icon-search icon-large"></i>
-        <form action="//www.google.com/search" target="_blank" class="search-form">
-            <input type="text" name="q" maxlength="20" placeholder="搜索...">
-            <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-        </form>
-    </div>
     <ul id="mobile-menu">
-        
         
             
                 <li>
@@ -111,16 +104,13 @@
     
     <li id="mobile-toc-title">目录<i id="down-up" class="icon-double-angle-down"></i>
     <div id="mobile-toc" class="mobile"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#待解决的问题">待解决的问题</a></li>
-<li><a href="#解决思路">解决思路</a></li>
-<li><a href="#复制远程库批处理脚本实现">复制远程库批处理脚本实现</a></li>
-<li><a href="#推送远程库批处理脚本实现">推送远程库批处理脚本实现</a></li>
-<li><a href="#一些说明">一些说明</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#待解决的问题">待解决的问题</a></li>
+    <li><a href="#解决思路">解决思路</a></li>
+    <li><a href="#复制远程库批处理脚本实现">复制远程库批处理脚本实现</a></li>
+    <li><a href="#推送远程库批处理脚本实现">推送远程库批处理脚本实现</a></li>
+    <li><a href="#一些说明">一些说明</a></li>
+  </ul>
 </nav></div></li>
 
 </div>
@@ -172,30 +162,22 @@
     </div>
     <div id="post-cotent">
         <p>在 <a href="https://www.yixuju.cn/programming/batch/hugo-push/">《编写 bat 批处理脚本文件来设置自动推送》</a> 中，我们使用强制覆盖的方式忽略仓库的错误，造成没有相应的版本控制信息被保存下来，这次，通过新的复制 <code>git</code> 信息的方法，将每次的站点更新保存到 <code>github</code> 的 <code>commit</code> 信息中。</p>
-
 <blockquote>
 <p><strong>注意</strong>：bat 批处理脚本在 <a href="https://www.yixuju.cn/programming/batch/hugo-push-2/">《单文件推送远程库批处理脚本》</a> 中完成了新的更新配置，以便使用单脚本完成下列推送工作。</p>
 </blockquote>
-
 <h2 id="待解决的问题">待解决的问题</h2>
-
 <ol>
 <li>由于原先的脚本中使用了 <code>git push -f origin master:master -v</code> 的命令，造成每次的推送都被全部覆盖，没有实现版本控制，无法保留 <code>git commit</code> 信息的目的。</li>
 <li>保证运行脚本的安全性问题，尽可能减少增加无关文件。</li>
 </ol>
-
 <h2 id="解决思路">解决思路</h2>
-
 <ol>
 <li>通过 <code>git clone</code> 下载远程库并使用 <code>--depth</code> 参数获取最新的记录，避免仓库过大的问题。</li>
 <li>通过复制 <code>.git</code> 文件夹保存远程库的 <code>git</code> 信息，复制完清楚掉下载的远程库。</li>
 <li>组合远程库的 <code>.git</code> 文件夹和新生成的 <code>public</code> 文件夹提交到远程库。</li>
 </ol>
-
 <h2 id="复制远程库批处理脚本实现">复制远程库批处理脚本实现</h2>
-
 <p>下面是复制远程库批处理脚本，其中部分代码逻辑是为了适配后面的推送远程库批处理脚本。</p>
-
 <ol>
 <li><code>source</code> 指定源目录，参数地址必须存在。</li>
 <li><code>destination</code> 指定目的目录，参数地址不存在会被新建。</li>
@@ -204,7 +186,7 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-batch" data-lang="batch"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -295,13 +277,11 @@ xcopy /e/y/i/f <span class="nv">%source%</span> <span class="nv">%destination%</
     xcopy /e/y/i/f <span class="nv">%destination%</span> <span class="nv">%oldDestination%</span>
 <span class="p">)</span>
 
-<span class="k">set</span> <span class="nv">Error</span><span class="p">=</span>false</code></pre></td></tr></table>
+<span class="k">set</span> <span class="nv">Error</span><span class="p">=</span>false
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="推送远程库批处理脚本实现">推送远程库批处理脚本实现</h2>
-
+</div><h2 id="推送远程库批处理脚本实现">推送远程库批处理脚本实现</h2>
 <p>下面是推送远程库批处理脚本，其中部分路径脚本会生成临时文件，但不用担心，脚本运行完，会删除它们防止污染仓库。</p>
-
 <ol>
 <li><code>pan</code> 参数指代 <code>hugo</code> 生成的目录。</li>
 <li><code>repo</code> 参数指代生成文档的远程库。</li>
@@ -312,7 +292,7 @@ xcopy /e/y/i/f <span class="nv">%source%</span> <span class="nv">%destination%</
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-batch" data-lang="batch"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -402,20 +382,18 @@ hugo
     <span class="k">if</span> <span class="k">exist</span> .\.git <span class="p">(</span>
     git add --all
     git commit -m <span class="s2">&#34;Update site at </span><span class="nv">%time%</span><span class="s2">&#34;</span>
-    git push -f origin <span class="nv">%branch%</span><span class="p">:</span><span class="nl">%branch%</span><span class="c1"> -v</span>
+    git push -f origin <span class="nv">%branch%</span>:<span class="nv">%branch%</span> -v
     <span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
         <span class="k">echo</span> <span class="s2">&#34;Can not find .git directory, git push fail!&#34;</span>
     <span class="p">)</span>
 <span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
     <span class="k">echo</span> <span class="s2">&#34;Can not find public directory, hugo fail!&#34;</span>
 <span class="p">)</span>
-pause</code></pre></td></tr></table>
+<span class="k">pause</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="一些说明">一些说明</h2>
-
+</div><h2 id="一些说明">一些说明</h2>
 <p>这个脚本运行可能会碰到一些问题，本质上说，需要一定的条件：</p>
-
 <ul>
 <li>需要完成免密码与 <code>github</code> 链接。</li>
 <li>脚本中的路径需要自己修改设置。</li>
@@ -433,18 +411,20 @@ pause</code></pre></td></tr></table>
     </div>
 
 
-    <div>文章标签：<a href="https://www.yixuju.cntags/bat/">#bat&nbsp</a><a href="https://www.yixuju.cntags/cmd/">#cmd&nbsp</a>
+    <div>文章标签：
+      <a href="https://www.yixuju.cntags/bat/">#bat&nbsp</a>
+      <a href="https://www.yixuju.cntags/cmd/">#cmd&nbsp</a>
     </div>
 
 
 
-    <div>创建时间：<time datetime=2020-08-18></time>2020-08-18 | 最新更新于：<time datetime=2020-08-24></time>2020-08-24
+    <div>创建时间：<time datetime=2020-08-18></time>2020-08-18 | 最新更新于：<time datetime=2020-08-18></time>2020-08-18
     </div>
 
     <div>原始链接：https://www.yixuju.cn/programming/batch/hugo-push-1/<span class="copy-path" title="点击复制文章链接" data-clipboard-demo="" data-clipboard-action="copy" data-clipboard-text='https://www.yixuju.cn/programming/batch/hugo-push-1/' aria-label="复制成功！"><i class="icon-copy"></i></span>
     </div>
 
-    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    <div>许可协议：<a rel="license nofollow" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank rel="nofollow">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </div>
 
 </div>
@@ -470,68 +450,80 @@ pause</code></pre></td></tr></table>
             <section id="sidebar">
                 
     <aside class="sidebar">
-    <div id="search" class="card">
-        <div id="search-key">
-            <i class="icon-search icon-large"></i>
-            <form action="//www.google.com/search" target="_blank" class="search-form">
-                <input type="text" name="q" maxlength="20" placeholder="搜索...">
-                <input type="hidden" name="sitesearch" value=https://www.yixuju.cn>
-            </form>
-        </div>
-    </div>
-        <div id="avatar" class="card">
-            <a href=/page/about>
-                <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
-            </a>
-            <div id="motto">
-                <span>品水如酒，愚醉……</span>
-            </div>
-        </div>
-        <div id="categories" class="card">
-            <div id="category-title">文章分类</div>
-            
-            <li class="category">
-                <a href=/programming/>编程体验</a>
-                
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/batch/>batch</a>
-                        </ol>
-                    
-                        <ol class="subcategory">
-                            <a href=/programming/python/>python</a>
-                        </ol>
-                    
-                
-            </li>
-            
-            <li class="category">
-                <a href=/other/>其他分享</a>
-                
-            </li>
-            
-            <li class="category">
-                <a href=/blog/>生活感悟</a>
-                
-            </li>
-            
+  <div id="avatar" class="card">
+      <a href=/page/about>
+          <img class="animated zoomIn" id="avatar-img" src=/img/avatar.jpg alt=yi_Xu>
+      </a>
+      <div id="motto">
+          <span>品水如酒，愚醉……</span>
       </div>
+  </div>
+  <div id="categories" class="card">
+      <div class="card-title sidebar-title">文章分类</div>
+      
+      <li class="category">
+          <a href=/programming/>编程体验</a>
+          
+              
+                  <ol class="subcategory">
+                      <a href=/programming/batch/>batch</a>
+                  </ol>
+              
+                  <ol class="subcategory">
+                      <a href=/programming/python/>python</a>
+                  </ol>
+              
+          
+      </li>
+      
+      <li class="category">
+          <a href=/other/>其他分享</a>
+          
+      </li>
+      
+      <li class="category">
+          <a href=/blog/>生活感悟</a>
+          
+      </li>
+      
+  </div>
+  <div id="communication" class="card">
+    <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>TG 群组: <a href="https://t.me/yixuju" target="_blank" rel="nofollow">t.me/yixuju</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>QQ 群组: <a href="https://jq.qq.com/?_wv=1027&amp;k=XKIJXRol" target="_blank" rel="nofollow">495793229</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>联系邮箱: <a href="mailto:yi_Xu@yixuju.cn" target="_blank" rel="nofollow">yi_Xu@yixuju.cn</a></span>
+    </li>
+    
+    <li class="communication-list">
+      <span>微信公众号: <a href="" target="_blank" rel="nofollow">逸絮居</a></span>
+    </li>
+    
+</div>
 </aside>
     
     <aside class="sidebar">
-        <div id="post-menu">
-            <h1 id="toc-title">目录</h1>
+        <div id="post-menu" class="card">
+            <div class="card-title sidebar-title">目录</div>
             <div id="toc"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#待解决的问题">待解决的问题</a></li>
-<li><a href="#解决思路">解决思路</a></li>
-<li><a href="#复制远程库批处理脚本实现">复制远程库批处理脚本实现</a></li>
-<li><a href="#推送远程库批处理脚本实现">推送远程库批处理脚本实现</a></li>
-<li><a href="#一些说明">一些说明</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#待解决的问题">待解决的问题</a></li>
+    <li><a href="#解决思路">解决思路</a></li>
+    <li><a href="#复制远程库批处理脚本实现">复制远程库批处理脚本实现</a></li>
+    <li><a href="#推送远程库批处理脚本实现">推送远程库批处理脚本实现</a></li>
+    <li><a href="#一些说明">一些说明</a></li>
+  </ul>
 </nav></div>
         </div>
     </aside>
@@ -545,10 +537,10 @@ pause</code></pre></td></tr></table>
             target = "_blank"
         
         target = "_self" rel="nofollow">
-            &copy; 2014 - 2020 yi_Xu
+            &copy; 2014 - 2021 yi_Xu
     </a>
     <i class="icon-lightbulb"></i>
-    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo</a>
+    <a href="https://gohugo.io/" target="_blank" rel="nofollow">Power_by Hugo 0.80.0</a>
     <i class="icon-coffee"></i>
     <a href="https://github.com/yi-Xu-0100/hugo-theme-whiteink" target="_blank">Theme_by WhiteInk</a>
     
