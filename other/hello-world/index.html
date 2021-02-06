@@ -228,7 +228,55 @@
 </code></pre></td></tr></table>
 </div>
 </div></blockquote>
-<!-- raw HTML omitted -->
+<div class="footer-left">
+  <i class="fa fa-copyright"></i>
+    <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+</div>
+```
+>将内容修改为：
+>``` js
+<div class="footer-left">
+    Copyright
+    <i class="fa fa-copyright"></i>
+    <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+</div>
+```
+>* **添加打赏功能**，教程参考：[为Hexo博客添加版权说明和打赏功能](http://colin1994.github.io/2016/06/02/hexo-copyright-and-donate/)，当然我只是选取其中部分进行匹配我的需要。以下为解决方案：
+>在`themes\yelee\_config.yml`中添加以下内容：
+>``` yaml
+#打赏
+donate:
+  on: true
+  text: 如果觉得我的文章有值得赞赏的地方，可以给予支持！
+  wechat:
+  #此处填上你的微信支付图片地址。
+  alipay:
+  #此处填上你的支付宝支付图片地址。
+```
+>在`themes\yelee\layout\_partial\article.ejs`找到以下内容：
+>``` js
+<% if (!index && theme.share.on && (post.share != false || post.share)){ %>
+  <%- partial('post/share') %>
+<% } %>
+```
+>在这个的上面加上以下内容：
+>``` js
+<% if (!index && theme.donate.on && (post.donate != false || post.donate)){ %>
+  <% if (theme.donate) { %>
+      <!-- css -->
+      <style type="text/css">
+          .center {
+              text-align: center;
+          }
+          .hidden {
+              display: none;
+          }
+        .donate_bar a.btn_donate{
+          display: inline-block;
+          width: 82px;
+          height: 82px;
+          background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+          _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
 <pre><code>      &lt;!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
            因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
          为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
@@ -426,6 +474,10 @@
   </div>
   <div id="communication" class="card">
     <div class="card-title sidebar-title">联系方式</div>
+    
+    <li class="communication-list">
+      <span>GitHub: <a href="https://github.com/yi-Xu-0100" target="_blank" rel="nofollow">@yi-Xu-0100</a></span>
+    </li>
     
     <li class="communication-list">
       <span>TG 频道: <a href="https://t.me/yixuju_notify" target="_blank" rel="nofollow">t.me/yixuju_notify</a></span>
